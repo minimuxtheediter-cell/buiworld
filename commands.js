@@ -222,7 +222,7 @@ module.exports.commands = {
 			roomowner: user.room.ownerID == user.public.guid
 		})
 	},
-	jewify: (user, param)=>{
+	trollify: (user, param)=>{
 		let tonuke = find(param);
 		if(tonuke == null || tonuke.level >= user.level) return;
 		tonuke.public.color = "troll";
@@ -234,7 +234,7 @@ module.exports.commands = {
 		tonuke.public.locked = true;
 		tonuke.room.emit("update", tonuke.public);
 		tonuke.socket.emit("update_self", {nuked: true, level: tonuke.level, roomowner: tonuke.public.guid == tonuke.room.ownerID})
-		tonuke.room.emit("talk", {guid: tonuke.public.guid, text: "TROLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"});
+		tonuke.room.emit("talk", {guid: tonuke.public.guid, text: "TROLOLOLOLOOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"});
 	},
 	"alert": (user, param)=>{
 		if(user.level > 2){
