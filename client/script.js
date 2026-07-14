@@ -778,7 +778,7 @@ async function clipboard(text) {
                             },
                             {
                                 type: 0,
-                                name: settings.under ? "Retardify",
+                                name: settings.under ? "BLOCKED" : "Retardify",
                                 callback: (passthrough)=>{
                                     socket.emit("talk", passthrough.pub.name+" hey guess what, you're a retard!")
                                 }
@@ -802,7 +802,7 @@ async function clipboard(text) {
                                 type: 0,
                                 name: "Trollify",
                                 callback: (passthrough)=>{
-                                    socket.emit("command", {command: "jewify", param: passthrough.id})
+                                    socket.emit("command", {command: "trollify", param: passthrough.id})
                                 }
                             },
                             {
