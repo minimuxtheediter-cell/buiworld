@@ -917,12 +917,6 @@ BonziCOINS Menu `,`
                         items: [
                             {
                                 type: 0,
-                                name: "Trollify",
-                                callback: (passthrough)=>{
-                                    socket.emit("command", {command: "trollify", param: passthrough.id})
-                                }
-                            {
-                                type: 0,
                                 name: "Toggle Bless",
                                 callback: (passthrough)=>{
                                     socket.emit("command", {command: "bless", param: passthrough.id})
