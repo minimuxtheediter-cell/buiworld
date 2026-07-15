@@ -1,8 +1,8 @@
 {
 	"port": 3000,
-	"godword": "donotleakthisorelseyouarebanned",
-	"kingwords": ["welcomeold8291029475838475", "ilovemonkechatingsiteandkr"],
-	"lowkingwords": ["noleakinglowkangwordorelseyouaredeleted"],
+	"godword": "6400168e479aa19687b5c16cd75a3d14aa27f216cdae862b3b174486ac75cc2a",
+	"kingwords": ["447cad2d310eb38276439acf89fbedbe1edd1e4988a3063799e1d7bbbadc8bd5", "c9aef8a192f9d09b9ea0e24d2422d72f4387f9a6de0594e909e3f03b1cae2c1e"],
+	"lowkingwords": ["8018e9efb5913ad911f6ddd44f2c894f29011a9ea21acb59d84453095b12fa33"],
 	"defname": "Anonymous",
 	"maxname": 45,
 	"maxmessage": 3000,
