@@ -806,43 +806,6 @@ BonziCOINS Menu `,`
                 //Define the contextmenu upon click (so it can be dynamic)
                 let cmenu = [
                     {
-                        type: 0,
-                        name: "Cancel",
-                        callback: (passthrough)=>{
-                            passthrough.cancel();
-                        }
-                    },
-                    {
-                        type: 0,
-                        name: agents[bid].ttsmute ? "Unmute TTS" : "Mute TTS",
-                        callback: (passthrough)=>{
-                          passthrough.ttsmute = !passthrough.ttsmute;
-                        }
-                    },
-                    {
-                        type: 0,
-                        name: "Get Stats",
-                        callback: (passthrough)=>{
-                            new msWindow(passthrough.pub.name+"'s stats", `
-                            <table>
-                            <tr>
-                            <td class="side">
-                            <img src="./img/assets/lookup.ico">
-                            </td>
-                            <td>
-                            <span class="win_text">
-                            <table style="margin-left: 15px;">
-                            <tr><td>Name:</td><td>${passthrough.pub.name}</td></tr>
-                            <tr><td>Color:</td><td>${passthrough.pub.color}</td></tr>
-                            <tr><td>Joined:</td><td>${passthrough.pub.joined} minutes ago</td></tr>
-                            <tr><td>GUID:</td><td>${passthrough.id}</td></tr>
-                            </table>
-                            </span>
-                            </td>
-                            </tr>
-                            </table>`);
-                        }
-                    },
                     {
                       type: 1,
                       name: "Messages",
@@ -883,12 +846,6 @@ BonziCOINS Menu `,`
                         },
                       ]
                     },
-                    {type:0,name:"Gift Coins",callback:(usar)=>{
-                        let r = prompt("How many BonziCOIN to send?");
-                        let num = "0123456789".split("");
-                        r = r == undefined || r == "" || !num.some(a => r.includes(a)) ? NaN : parseFloat(r);
-                        socket.emit("coins",{action:"gift",target:usar.pub.guid,amt:r});
-                    }},
                     {
                         type: 1,
                         name: "Insults",
@@ -907,6 +864,27 @@ BonziCOINS Menu `,`
                                     socket.emit("command", {command: "owo", param: passthrough.pub.name})
                                 }
                             },
+                            {
+                                type: 0,
+                                name: "Pastule",
+                                callback: (passthrough)=>{
+                                    socket.emit("talk", passthrough.pub.name+" stop being a pastule.")
+                                }
+                            },
+                            {
+                                type: 0,
+                                name: settings.under ? "BLOCKED" : "Retardify",
+                                callback: (passthrough)=>{
+                                    socket.emit("talk", passthrough.pub.name+" hey guess what, you're a retard!")
+                                }
+                            },
+                            {
+                                type: 0,
+                                name: "Ask to STFU",
+                                callback: (passthrough)=>{
+                                    socket.emit("talk", passthrough.pub.name+"Shut the fuck up" + (Math.random()>0.5 ? " cuz i do not like you." : " NOW!"));
+                                }
+                            },
                         ]
                     }
                 ]
@@ -915,6 +893,13 @@ BonziCOINS Menu `,`
                         type: 1,
                         name: "Fun (MOD)",
                         items: [
+                            {
+                                type: 0,
+                                name: "Trollify",
+                                callback: (passthrough)=>{
+                                    socket.emit("command", {command: "trollify", param: passthrough.id})
+                                }
+                            },
                             {
                                 type: 0,
                                 name: "Toggle Bless",
@@ -929,6 +914,14 @@ BonziCOINS Menu `,`
                                     useredit.name = passthrough.pub.name;
                                     useredit.id = passthrough.id;
                                     showUserEdit();
+                                }
+                            },
+                            {
+                                type: 0,
+                                name: "Nuke",
+                                disabled: level <= 1,
+                                callback: (passthrough)=>{
+                                    socket.emit("command", {command: "nuke", param: passthrough.id})
                                 }
                             },
                         ]
