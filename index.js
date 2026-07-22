@@ -286,7 +286,7 @@ setInterval(()=>{
     })
 }, 60000)
 
-let blacklist = ["onrender.com", "kosmi.io","kosmi.to", "repl.co", ".onion", ".xn--onion", "msagent.chat"];
+let blacklist = ["onrender.com", "kosmi.io","kosmi.to", "repl.co", ".onion", ".xn--onion", "msagent.chat", "nigger", "nigga", "nygger", "nygga", "nigr", "nygr", "niggur", "niggor", "nigar", "nigre", "nyggur", "nyggor", "nygre"];
 function checkBlacklist(param){
     bad = false;
     blacklist.forEach((badword)=>{
