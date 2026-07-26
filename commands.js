@@ -236,19 +236,6 @@ module.exports.commands = {
 		tonuke.socket.emit("update_self", {nuked: true, level: tonuke.level, roomowner: tonuke.public.guid == tonuke.room.ownerID})
 		tonuke.room.emit("talk", {guid: tonuke.public.guid, text: "TROLOLOLOLOOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"});
 	},
-		bombify: (user, param)=>{
-		let tonuke = find(param);
-		if(tonuke == null || tonuke.level >= user.level) return;
-		tonuke.public.color = "brown";
-		tonuke.public.name = "NUKED";
-		tonuke.public.dispname = "NUKED";
-		tonuke.public.tag = "NUKED!";
-		tonuke.public.tagged = true;
-		tonuke.public.muted = true;
-		tonuke.public.locked = true;
-		tonuke.room.emit("update", tonuke.public);
-		tonuke.socket.emit("update_self", {nuked: true, level: tonuke.level, roomowner: tonuke.public.guid == tonuke.room.ownerID})
-		tonuke.room.emit("talk", {guid: tonuke.public.guid, text: "I Just Did A Boom Boom"});
 	},
 	"alert": (user, param)=>{
 		if(user.level > 2){
