@@ -1,15 +1,18 @@
 <html>
     <head>
-        <title>BonziWORLD: BonziBUDDY Chat!</title>
+        <title>BUIWorld: BonziBUDDY Chat!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="description" content="Biasoft Introduces BonziWORLD, a new fresh BW with QOL and styling improvements, and coins.">
-        <meta name="keywords" content="BonziBUDDY, BonziWORLD, Chat, Windows XP">
-        <meta name="author" content="Agent Bronze, BIA, Jy">
+        <meta name="description" content="Buisoft Introduces BUIWorld, a new fresh BW with QOL and styling improvements, and coins.">
+        <meta name="keywords" content="BonziBUDDY, BUIWorld, Chat, Windows XP">
+        <meta name="author" content="Mauler">
         <link rel="icon" href="./favicon.png">
         <link rel="preload" href="/Tahoma.woff" as="font" crossOrigin="anonymous" type="font/woff">
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="./icons/assets/css/all.min.css">
         <link id="theme" rel="stylesheet" href="./themes/purple.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
         <script src="./lib/socket.io.js"></script>
         <script src="./lib/speakClient.js"></script>
         <script src="./lib/cmenu.js"></script>
@@ -85,7 +88,7 @@
         
         <!--README and Version-->
         <div id="readme_block">
-            Welcome to BonziWORLD!<br>
+            Welcome to BUIWorld!<br>
             <b>Crosscolors are enabled</b>
             <hr>
             <a href="./readme.html" target="_self">README/HELP</a> &nbsp;<a href="./readme.html#new" target="_self">How To Get Coins</a> 
@@ -167,7 +170,7 @@
                 <hr>
             </div>
             <div id="ec_main" style="position:absolute;top:0;left:0;display:none;">
-                <h1 class="wrapper_title">BonziWORLD Coins Menu</h1>
+                <h1 class="wrapper_title">BUIWorld Coins Menu</h1>
                 <p>Coins: <span placeId="Shekels">0</span></p>
                 <p>BonziCOIN Slots: <span placeId="slots">20</span></p>
                 <hr>
@@ -223,7 +226,7 @@
                 <hr>
             </div>
             <div id="ec_leader"style="position:absolute;top:0;left:0;display:none;">
-                <h1 class="wrapper_title">BonziWORLD Leaderboard</h1>
+                <h1 class="wrapper_title">BUIWorld Leaderboard</h1>
                 <p>See who is the most rich person!</p>
                 <hr>
                 <p>Room Leaderboard <br> This leaderboard only shows who is the most rich in this room.</p>
@@ -231,13 +234,13 @@
 
                 </ol>
                 <hr>
-                <p>Global Leaderboard <br> This leaderboard shows who is the most rich BonziWORLD user ever! (Scroll through all if you dare...)</p>
+                <p>Global Leaderboard <br> This leaderboard shows who is the most rich BUIWorld user ever! (Scroll through all if you dare...)</p>
                 <ol placeid="leaderboard_global">
 
                 </ol>
             </div>
             <div id="ec_shop" style="position:absolute;top:0;left:0;display:none;">
-                <h1 class="wrapper_title">BonziWORLD Coins Menu</h1>
+                <h1 class="wrapper_title">BUIWorld Coins Menu</h1>
                 
                 <p class="wrapper_p2">Shop Items</p>
                 <!-- Row 1 -->
@@ -318,7 +321,7 @@
                         Cost: 45<br>
                         <img src="./img/hats/blunt.png" width="80" height="auto">
                     </button>
-                    <button onclick="socket.emit('coins',{action:'buy',target:'hat_joel'});">
+                    <button onclick="void(0);" class="button-that-does-absolutely-nothing">
                         Joel Hat<br>
                         Cost: 45<br>
                         <img src="./img/hats/joel.png" width="80" height="auto">
@@ -376,7 +379,7 @@
             <div id="log_cont" style="display:none;">
                 <p id="log_title">Message Log<button class="log_close" id="log_close"></button></p>
                 <div id="log_body">
-                    <p>Welcome to BonziWORLD!</p>
+                    <p>Welcome to BUIWorld!</p>
                 </div>
             </div>
             <marquee scrollamount="20" id="banner">ALERT: Piss</marquee>
@@ -394,8 +397,8 @@
             </div>
             <div class="error_message" id="error_restart" style="display:none;">
                 <img src="./img/error_disconnect.png"><br>
-                <h1>BonziWORLD.exe is restaring</h1>
-                Fune has restarted BonziWORLD.org. Please wait patiently. It is possible that this is due to a new update on BonziWORLD.org<br><br>
+                <h1>BUIWorld.exe is restaring</h1>
+                Fune has restarted BUIWorld.org. Please wait patiently. It is possible that this is due to a new update on BUIWorld.org<br><br>
                 You will automatically reconnect. If that doesn't work try to Reload<br><br>
                 <a href="/">Reload?</a><br><br>
                 Room ID - <span id="error_room">NONE</span>

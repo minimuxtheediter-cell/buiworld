@@ -795,3 +795,6 @@ span .bubble_text{
   font-size: 20px;
   color: rgba(0,0,0,0.7);
 }
+.button-that-does-absolutely-nothing {
+    font-family: 'Noto Sans', sans-serif !important;
+}
